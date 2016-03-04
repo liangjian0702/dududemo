@@ -13,8 +13,9 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources location="/js/" mapping="/js/**" />
-
+	<!-- <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+ -->
+<mvc:resources mapping="/webjars/**" location="/webjars/"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>

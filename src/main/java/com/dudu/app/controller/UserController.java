@@ -1,5 +1,7 @@
 package com.dudu.app.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +23,23 @@ public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	@RequestMapping(value = "/registUser", method = RequestMethod.GET)
-	public String registUser(Model model) {
-	    return "registUser";
-	}
-	
+//	@RequestMapping(value = "/registUser", method = RequestMethod.GET)
+//	public String registUser(Model model) {
+//	    return "registUser";
+//	}
+//	
 	
 	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("user") User user, Model model) {
 		logger.info("{}", user);
-		
-		System.out.println(user.getName() + ":" + user.getPassword());
-		userDao.save(user);
+		// check dumplicate
+		User userCheck = new User();
+		userCheck.setName(user.getName());
+		List<User> userList = userDao.findByCriteria(userCheck);
+		if (userList.size() == 0) {
+			userDao.save(user);
+		}
 		//model.addAttribute("message",  user.getName() + ":" + user.getPassword());
-		return "registUser";
+		return "home";
 	}
 }

@@ -1,11 +1,17 @@
 package com.dudu.app.dao.impl;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.lang3.StringUtils;
+import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.SimpleExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,7 +56,28 @@ public class UserDaoImpl implements com.dudu.app.dao.UserDao {
 
 	@Override
 	public User findByUserId(String id) {
-		return null;
+		User user = null;
+		user = this.getSession().load(User.class, id);
+		Hibernate.initialize(user);
+		return user;
+	}
+
+	@SuppressWarnings({ "unused", "unchecked" })
+	@Override
+	public List<User> findByCriteria(User user) {
+		Criteria criteria = this.getSession().createCriteria(User.class);
+		List<User> list = null;
+		if (null != user) {
+			if (StringUtils.isNotEmpty(user.getName())) {
+				criteria.add(Restrictions.eq("name", user.getName()));
+			}
+			if (StringUtils.isNotEmpty(user.getPassword())) {
+				criteria.add(Restrictions.eq("password", user.getPassword()));
+			}
+			list = criteria.list();
+		}
+
+		return list;
 	}
 
 }

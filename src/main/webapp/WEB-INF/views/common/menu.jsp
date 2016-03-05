@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String userName = null;
+    userName = (String) session.getAttribute("user");
 %>
+
 <!-- include login-->
 	<jsp:include page="login.jsp" flush="true" />
 	
-	
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -18,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">嘟嘟旅行</a>
+          <a class="navbar-brand" href="<%=path%>/">嘟嘟旅行</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -40,8 +44,12 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Default</a></li>
-            <li><a href="#">Static top</a></li>
+            <% if(null != userName || "".equals(userName)) {%>
+            <li><a href="#">欢迎：<%=userName%></a></li>
+            <li><a href="<%=path%>/logout">退出 <span class="sr-only">(current)</span></a></li>
+            <%} else { %>
             <li><a href="#" data-toggle="modal" data-target="#loginModal">登陆 <span class="sr-only">(current)</span></a></li>
+            <%} %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

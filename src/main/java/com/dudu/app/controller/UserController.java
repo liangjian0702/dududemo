@@ -30,7 +30,7 @@ public class UserController {
 	// }
 	//
 
-	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/regist", method = RequestMethod.POST)
 	public String createUser(@ModelAttribute("user") User user, HttpSession httpSession) {
 		logger.info("{}", user);
 		// check dumplicate
@@ -41,8 +41,6 @@ public class UserController {
 			userDao.save(user);
 			httpSession.setAttribute("user", user.getName());
 		}
-		// model.addAttribute("message", user.getName() + ":" +
-		// user.getPassword());
-		return "home";
+		return "redirect:home";
 	}
 }

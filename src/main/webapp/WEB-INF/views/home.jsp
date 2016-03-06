@@ -57,17 +57,14 @@
 					alt="First slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Example headline.</h1>
+						<h1>舒适的酒店环境</h1>
 						<p>
-							Note: If you're viewing this page via a
+							超多日本 酒店!用CooL10优惠码订房，房价直减10%。
 							<code>file://</code>
-							URL, the "next" and "previous" Glyphicon buttons on the left and
-							right might not load/display properly due to web browser security
-							rules.
+							精选日式旅馆，环境舒适各地人气景点，繁华地段酒店精选，地理位置优越，设施齐全
 						</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Sign
-								up today</a>
+							<a class="btn btn-lg btn-primary" href="#" role="button">去看看</a>
 						</p>
 					</div>
 				</div>
@@ -77,13 +74,10 @@
 					alt="Second slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>Another example headline.</h1>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
+						<h1>包你一饱口福</h1>
+						<p>去日本不吃好吃的怎么行!出门旅行除了能看美丽的风景,对小沫来说最重要的就是当地美食了!对吃货来说,美食更是超越了美景。</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Learn
-								more</a>
+							<a class="btn btn-lg btn-primary" href="#" role="button">去看看</a>
 						</p>
 					</div>
 				</div>
@@ -93,13 +87,10 @@
 					alt="Third slide">
 				<div class="container">
 					<div class="carousel-caption">
-						<h1>One more for good measure.</h1>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
-							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
-							dolor id nibh ultricies vehicula ut id elit.</p>
+						<h1>视觉的享受</h1>
+						<p>每年3、4月份,日本整个弥漫着粉红的浪漫气息,吸引着无数游客前去观赏</p>
 						<p>
-							<a class="btn btn-lg btn-primary" href="#" role="button">Browse
-								gallery</a>
+							<a class="btn btn-lg btn-primary" href="#" role="button">去看看</a>
 						</p>
 					</div>
 				</div>
@@ -128,12 +119,9 @@
 				<img class="img-circle" src="<%=basePath%>static/img/market_a.jpg"
 					alt="Generic placeholder image" width="160" height="140">
 				<h2>富士山|Fujisan</h2>
-				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
-					euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-					Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-					Praesent commodo cursus magna.</p>
+				<p>富士山（日文：富士山/ふじさん，英文：Fujisan），是日本国内最高峰，日本重要国家象征之一。横跨静冈县和山梨县的活火山，接近太平洋岸，东京西南方约80公里。富士山被日本人民誉为“圣岳”，是日本民族的象征。作为日本的国家象征之一，在全球享有盛誉。</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button">View details
+					<a class="btn btn-default" href="#" role="button">详情
 						&raquo;</a>
 				</p>
 			</div>
@@ -142,12 +130,9 @@
 				<img class="img-circle" src="<%=basePath%>static/img/market_b.jpg"
 					alt="Generic placeholder image" width="160" height="140">
 				<h2>箱根|Hakone</h2>
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-					ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-					purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-					tortor mauris condimentum nibh.</p>
+				<p>箱根位于神奈川县西南部，距东京90千米，是日本的温泉之乡、疗养胜地。约在40万年前这里曾经是一处烟柱冲天，熔岩四溅的火山口。现在的箱根到处翠峰环拱，溪流潺潺，温泉景色十分秀丽。由于终年游客来来往往，络绎不绝，故箱根又享有“国立公园”之称。</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button">View details
+					<a class="btn btn-default" href="#" role="button">详情
 						&raquo;</a>
 				</p>
 			</div>
@@ -156,12 +141,9 @@
 				<img class="img-circle" src="<%=basePath%>static/img/market_c.jpg"
 					alt="Generic placeholder image" width="160" height="140">
 				<h2>京都|Kyoto</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
+				<p>京都位于日本列岛中心的关西地区。 为盆地地形，面积约为610平方公里，人口为150万人 ，是有名的历史之城。公元794年平安京城始建于京都，历经大政奉还直至1868年迁都到东京为止的1000多年间，京都一直是日本的首都。 自建城以来，京都就作为日本的经济、文化中心，它的市民们继承了其优雅的传统。</p>
 				<p>
-					<a class="btn btn-default" href="#" role="button">View details
+					<a class="btn btn-default" href="#" role="button">详情
 						&raquo;</a>
 				</p>
 			</div>

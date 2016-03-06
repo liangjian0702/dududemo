@@ -16,10 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.dudu.app.dao.UserDao;
 import com.dudu.app.entity.User;
 
 @Repository(value = "userDao")
-public class UserDaoImpl implements com.dudu.app.dao.UserDao {
+public class UserDaoImpl implements UserDao {
 
 	@Resource
 	private SessionFactory sessionFactory;

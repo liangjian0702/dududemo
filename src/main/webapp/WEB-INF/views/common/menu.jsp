@@ -36,12 +36,12 @@ $("#messageModal").modal()
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#"><spring:message code="lbl.customize" /></a></li>
+				<li><a href="#"><spring:message code="lbl.personalguider" /></a></li>
+				<li><a href="#"><spring:message code="lbl.help" /></a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">Dropdown <span class="caret"></span></a>
+					aria-expanded="false"><spring:message code="lbl.order" /> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>

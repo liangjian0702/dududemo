@@ -1,6 +1,5 @@
 package com.dudu.app.dao.impl;
 
-import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,7 +10,6 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.criterion.SimpleExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,11 +22,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Resource
 	private SessionFactory sessionFactory;
-
-	public Collection loadProductsByCategory(String category) {
-		return this.sessionFactory.getCurrentSession().createQuery("from test.Product product where product.category=?")
-				.setParameter(0, category).list();
-	}
+//
+//	public Collection loadProductsByCategory(String category) {
+//		return this.sessionFactory.getCurrentSession().createQuery("from test.Product product where product.category=?")
+//				.setParameter(0, category).list();
+//	}
 
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
@@ -63,7 +61,7 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
-	@SuppressWarnings({ "unused", "unchecked" })
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findByCriteria(User user) {
 		Criteria criteria = this.getSession().createCriteria(User.class);

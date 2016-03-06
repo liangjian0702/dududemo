@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
-
 @Entity
 @Table(name = "login_user")
 public class User {
@@ -24,6 +22,10 @@ public class User {
 	@Column(name = "login_password", length = 20)
 	private String password;
 
+	@Column(name = "adminflg")
+	private Boolean adminFlag;
+	
+	
 	@Override
 	public String toString() {
 		return "User [name=" + name + ", password=" + password + "]";
@@ -52,6 +54,15 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Boolean getAdminFlag() {
+		return adminFlag;
+	}
+
+	public void setAdminFlag(Boolean adminFlag) {
+		this.adminFlag = adminFlag;
+	}
+	
 	
 	
 }

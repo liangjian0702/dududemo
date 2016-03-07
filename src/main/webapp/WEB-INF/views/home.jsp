@@ -39,7 +39,7 @@
 </head>
 <body>
 
-	<jsp:include page="common/menu.jsp" flush="true" />
+	<jsp:include page="component/menu.jsp" flush="true" />
 
 
 	<!-- Carousel

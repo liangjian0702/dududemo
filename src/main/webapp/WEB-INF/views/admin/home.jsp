@@ -41,13 +41,13 @@
 <body>
 
 	<!-- nav -->
-	<jsp:include page="common/menu.jsp" flush="true" />
+	<jsp:include page="component/menu.jsp" flush="true" />
 
 	<div class="container-fluid">
 		<div class="row">
 
 			<!-- sidebar -->
-			<jsp:include page="common/sidebar.jsp" flush="true" />
+			<jsp:include page="component/sidebar.jsp" flush="true" />
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<!-- sidebar -->

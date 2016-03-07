@@ -6,18 +6,23 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 public class BaseDaoImpl<T extends Serializable, PK extends Serializable> extends HibernateDaoSupport
-		implements BaseDao<T, PK> {
+		implements BaseDao<T, PK>{
 
-	@Autowired
+	protected static final Logger logger = LoggerFactory.getLogger(BaseDaoImpl.class);
+	
+	@Resource(name="sessionFactory")
 	public void setSuperSessionFactory(SessionFactory sessionFactory) {
 		super.setSessionFactory(sessionFactory);
 	}
@@ -50,51 +55,51 @@ public class BaseDaoImpl<T extends Serializable, PK extends Serializable> extend
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T get(PK id) {
+	public T get(PK id) throws Exception {
 		return (T) super.getHibernateTemplate().get(this.getEntityClass(), id);
 	}
 
 	@Override
-	public T update(T entity) {
+	public T update(T entity) throws Exception {
 		super.getHibernateTemplate().update(entity);
 		return entity;
 	}
 
 	@Override
-	public T save(T entity) {
+	public T save(T entity) throws Exception {
 		super.getHibernateTemplate().save(entity);
 		return entity;
 	}
 
 	@Override
-	public T saveOrUpdate(T entity) {
+	public T saveOrUpdate(T entity) throws Exception {
 		super.getHibernateTemplate().saveOrUpdate(entity);
 		return entity;
 	}
 
 	@Override
-	public void saveOrUpdateAll(Collection<T> entities) {
+	public void saveOrUpdateAll(Collection<T> entities) throws Exception {
 		// super.getHibernateTemplate();
 	}
 
 	@Override
-	public void delete(T entity) {
+	public void delete(T entity) throws Exception {
 		super.getHibernateTemplate().delete(entity);
 	}
 
 	@Override
-	public void deleteByKey(PK id) {
+	public void deleteByKey(PK id) throws Exception {
 		super.getHibernateTemplate().delete(this.get(id));
 	}
 
 	@Override
-	public void deleteAll(Collection<T> entities) {
+	public void deleteAll(Collection<T> entities) throws Exception {
 		super.getHibernateTemplate().deleteAll(entities);
 
 	}
 
 	@Override
-	public DetachedCriteria createDetachedCriteria(Criterion... criterions) {
+	public DetachedCriteria createDetachedCriteria(Criterion... criterions) throws Exception {
 		DetachedCriteria dc = DetachedCriteria.forClass(this.entityClass);
 		for (Criterion c : criterions) {
 			dc.add(c);
@@ -103,7 +108,7 @@ public class BaseDaoImpl<T extends Serializable, PK extends Serializable> extend
 	}
 
 	@Override
-	public Criteria createCriteria(Criterion... criterions) {
+	public Criteria createCriteria(Criterion... criterions) throws Exception {
 		DetachedCriteria dc = DetachedCriteria.forClass(this.entityClass);
 		for (Criterion c : criterions) {
 			dc.add(c);
@@ -113,19 +118,19 @@ public class BaseDaoImpl<T extends Serializable, PK extends Serializable> extend
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<T> findByCriteria(DetachedCriteria criteria) {
+	public List<T> findByCriteria(DetachedCriteria criteria) throws Exception {
 		return (List<T>) getHibernateTemplate().findByCriteria(criteria);
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<T> findByCriteria(DetachedCriteria criteria, int pageIndex, int pageSize) {
+	public List<T> findByCriteria(DetachedCriteria criteria, int pageIndex, int pageSize) throws Exception {
 		int firstResult = (pageIndex - 1) * pageSize;
 		return (List<T>) super.getHibernateTemplate().findByCriteria(criteria, firstResult, pageSize);
 	}
 
 	@Override
-	public Integer getCount(DetachedCriteria criteria) {
+	public Integer getCount(DetachedCriteria criteria) throws Exception {
 		int count = ((Number) criteria.setProjection(Projections.rowCount()).getExecutableCriteria(currentSession())
 				.uniqueResult()).intValue();
 		criteria.setProjection(null);

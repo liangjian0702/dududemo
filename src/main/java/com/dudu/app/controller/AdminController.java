@@ -15,33 +15,36 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dudu.app.common.BaseController;
 import com.dudu.app.constants.Constants;
 import com.dudu.app.entity.User;
 import com.dudu.app.service.UserService;
 
 @Controller
-@RequestMapping("/admin")
-public class AdminController implements Constants {
-	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
+@RequestMapping(value="/admin")
+public class AdminController extends BaseController implements Constants {
 
 	@Autowired
 	UserService userService;
 
 	@RequestMapping(value = { "/", "" }, method = RequestMethod.GET)
-	public String init(HttpSession httpSession) {
+	public String init(HttpSession httpSession) throws Exception {
 		logger.info("init {}", httpSession);
 		httpSession.removeAttribute("user");
 		httpSession.removeAttribute("message");
+//		throw new Exception("this is a test");		
 		return "/admin/login";
 	}
+
 	@RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
-	public String logout(HttpSession httpSession) {
+	public String logout(HttpSession httpSession) throws Exception {
 		logger.info("logout {}", httpSession);
 		httpSession.removeAttribute("user");
 		return "redirect:/admin/";
 	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("user") User user, HttpSession httpSession) {
+	public String login(@ModelAttribute("user") User user, HttpSession httpSession) throws Exception {
 		logger.info("{}.", user);
 		String view = "/admin/login";
 		// search admin user
@@ -64,33 +67,32 @@ public class AdminController implements Constants {
 		}
 		return view;
 	}
+
 	@RequestMapping(value = { "/home" }, method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Model model) throws Exception {
 		logger.info("home {}", model);
 		model.addAttribute("module", HOTEL_JSP);
 		return ADMIN_HOME;
 	}
 
 	@RequestMapping(value = { "/hotel" }, method = RequestMethod.GET)
-	public String hotel(Model model) {
+	public String hotel(Model model) throws Exception {
 		logger.info("hotel {}", model);
 		model.addAttribute("module", HOTEL_JSP);
 		return ADMIN_HOME;
 	}
+
 	@RequestMapping(value = { "/car" }, method = RequestMethod.GET)
-	public String car(Model model) {
+	public String car(Model model) throws Exception {
 		logger.info("car {}", model);
 		model.addAttribute("module", CAR_JSP);
 		return ADMIN_HOME;
 	}
-	
+
 	@RequestMapping(value = { "/guide" }, method = RequestMethod.GET)
-	public String guide(Model model) {
+	public String guide(Model model) throws Exception {
 		logger.info("guide {}", model);
 		model.addAttribute("module", GUIDE_JSP);
 		return ADMIN_HOME;
 	}
-	
-	
-
 }

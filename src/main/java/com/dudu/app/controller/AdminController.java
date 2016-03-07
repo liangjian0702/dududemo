@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +45,11 @@ public class AdminController implements Constants {
 		logger.info("{}.", user);
 		String view = "/admin/login";
 		// search admin user
-		user.setAdminFlag(Boolean.TRUE);
-		List<User> userList = userService.findByCriteria(user);
+		DetachedCriteria criteria = DetachedCriteria.forClass(User.class);
+		criteria.add(Restrictions.eq("name", user.getName()));
+		criteria.add(Restrictions.eq("password", user.getPassword()));
+		criteria.add(Restrictions.eq("adminFlag", Boolean.TRUE));
+		List<User> userList = userService.findByCriteria(criteria);
 		User userdb = null;
 		if (userList.size() >= 1) {
 			userdb = userList.get(0);

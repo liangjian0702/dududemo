@@ -5,6 +5,8 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,12 @@ public class LoginCotnroller {
 	public ModelAndView loginSubmit(@ModelAttribute("user") User user, HttpSession httpSession, Locale locale) {
 		logger.info("{}.", user);
 
-		List<User> userList = userService.findByCriteria(user);
+		DetachedCriteria criteria = DetachedCriteria.forClass(User.class);
+		criteria.add(Restrictions.eq("name", user.getName()));
+		criteria.add(Restrictions.eq("password", user.getPassword()));
+//		criteria.add(Restrictions.eq("adminFlag", true));
+		
+		List<User> userList = userService.findByCriteria(criteria);
 		User userdb = null;
 		if (userList.size() >= 1) {
 			userdb = userList.get(0);

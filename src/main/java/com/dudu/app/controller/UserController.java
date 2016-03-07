@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +29,9 @@ public class UserController {
 	public String createUser(@ModelAttribute("user") User user, HttpSession httpSession) {
 		logger.info("{}", user);
 		// check dumplicate
-		User userCheck = new User();
-		userCheck.setName(user.getName());
-		List<User> userList = userService.findByCriteria(userCheck);
+		DetachedCriteria criteria = DetachedCriteria.forClass(User.class);
+		criteria.add(Restrictions.eq("name", user.getName()));
+		List<User> userList = userService.findByCriteria(criteria);
 		if (userList.size() == 0) {
 			userService.save(user);
 			httpSession.setAttribute("user", user.getName());

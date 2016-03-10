@@ -60,7 +60,7 @@ public class AdminController extends BaseController {
 			httpSession.setAttribute("user", userdb.getName());
 			view = REDIRECT_URL_ADMIN_HOME;
 		} else {
-			httpSession.setAttribute("message", "用户名或密码错误!");
+			httpSession.setAttribute("message", "No user");
 		}
 		return view;
 	}

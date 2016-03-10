@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="org.apache.commons.lang3.StringUtils"%>
+<%@ page import="org.springframework.util.StringUtils"%>
 <%@ page import="com.dudu.app.constants.Constants"%>
 <%
 	String path = request.getContextPath();
@@ -12,17 +12,16 @@
 	String message = (String) session.getAttribute("message");
 	System.out.println("page---->" + message);
 %>
-
 <script type="text/javascript">
 $(function() {
 	var module = "${module}";
-	var HOTEL_JSP = "<%=Constants.HOTEL_JSP%>";
-	var CAR_JSP = "<%=Constants.CAR_JSP%>";
-	var GUIDE_JSP = "<%=Constants.GUIDE_JSP%>";
+	var HOTEL = "<%=Constants.MODULE_HOTEL%>";
+	var CAR = "<%=Constants.MODULE_CAR%>";
+	var GUIDE = "<%=Constants.MODULE_GUIDE%>";
 	var url = "/app/admin/hotel";
-	if (module == CAR_JSP) {
+	if (module == CAR) {
 		url = "/app/admin/car";
-	} else if (module == GUIDE_JSP) {
+	} else if (module == GUIDE) {
 		url = "/app/admin/guide";
 	} else {
 		url = "/app/admin/hotel";

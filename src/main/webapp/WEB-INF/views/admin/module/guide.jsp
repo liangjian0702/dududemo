@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="org.apache.commons.lang3.StringUtils"%>
+<%@ page import="org.springframework.util.StringUtils"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,9 +11,7 @@
     System.out.println("page---->" + message);
 %>
 
-
 <h1 class="page-header">地导管理</h1>
-
 <div class="row placeholders">
 	<div class="col-xs-6 col-sm-3 placeholder">
 		<img

@@ -159,13 +159,9 @@
 		<div class="row featurette">
 			<div class="col-md-7">
 				<h2 class="featurette-heading">
-					First featurette heading. <span class="text-muted">It'll
-						blow your mind.</span>
+					京料理・懐石料理の料亭<span class="text-muted">「菊乃井」</span>
 				</h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor
-					fringilla. Vestibulum id ligula porta felis euismod semper.
-					Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-					Fusce dapibus, tellus ac cursus commodo.</p>
+				<p class="lead">大正元年創業の京都の老舗料亭　菊乃井では慶事や仏事、接待などお客様の大切なお時間がよりいっそうお心に残るものになるよう、一期一会のおもてなしの心で皆様をお待ちしております。</p>
 			</div>
 			<div class="col-md-5">
 				<img class="featurette-image img-responsive center-block"
@@ -179,13 +175,9 @@
 		<div class="row featurette">
 			<div class="col-md-7 col-md-push-5">
 				<h2 class="featurette-heading">
-					Oh yeah, it's that good. <span class="text-muted">See for
-						yourself.</span>
+					星野集团<span class="text-muted"></span>
 				</h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor
-					fringilla. Vestibulum id ligula porta felis euismod semper.
-					Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-					Fusce dapibus, tellus ac cursus commodo.</p>
+				<p class="lead">100 TRIP STORIES 〜旅游的魔力〜</p>
 			</div>
 			<div class="col-md-5 col-md-pull-7">
 				<img class="featurette-image img-responsive center-block"
@@ -199,12 +191,9 @@
 		<div class="row featurette">
 			<div class="col-md-7">
 				<h2 class="featurette-heading">
-					And lastly, this one. <span class="text-muted">Checkmate.</span>
+					清水寺<span class="text-muted"></span>
 				</h2>
-				<p class="lead">Donec ullamcorper nulla non metus auctor
-					fringilla. Vestibulum id ligula porta felis euismod semper.
-					Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-					Fusce dapibus, tellus ac cursus commodo.</p>
+				<p class="lead">位于日本京都市东山区清水的寺院，是京都最古老的寺院，山号为音羽山，主要供奉千手观音，1994年被列入世界文化遗产。清水寺为栋梁结构式寺院，大殿前为悬空的舞台，由139根高数十米的大圆木支撑，寺院建筑气势宏伟，结构巧妙，未用一根钉子，舞台的建筑，巍峨地耸立于陡峭的悬崖上，极其美妙。这里春季时樱花烂漫，是京都的赏樱名所之一，秋季时红枫飒爽，又是赏枫胜地。</p>
 			</div>
 			<div class="col-md-5">
 				<img class="featurette-image img-responsive center-block"

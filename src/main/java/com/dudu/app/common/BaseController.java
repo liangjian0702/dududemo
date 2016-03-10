@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dudu.app.constants.Constants;
+
 @Controller
-public class BaseController {
+public class BaseController implements Constants {
 	
 	protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
 

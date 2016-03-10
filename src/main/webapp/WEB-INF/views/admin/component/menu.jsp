@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="org.apache.commons.lang3.StringUtils"%>
+<%@ page import="org.springframework.util.StringUtils"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,7 +11,7 @@
 %>
 
 <!-- include login-->
-<%if(StringUtils.isNotEmpty(message)){%>
+<%if(!StringUtils.isEmpty(message)){%>
 <!-- include message-->
 <script type="text/javascript">
 $("#messageModal").modal()

@@ -42,15 +42,14 @@ public class UserController extends BaseController {
 	public String clearMessage(HttpSession httpSession) throws Exception {
 		logger.info("httpSession {}.", httpSession);
 		httpSession.removeAttribute("message");
-		return "redirect:home";
+		return URL_NORMAL_HOME;
 	}
 
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ModelAndView login(@ModelAttribute("user") User user, HttpSession httpSession, Locale locale)
+	public String login(@ModelAttribute("user") User user, HttpSession httpSession, Locale locale)
 			throws Exception {
 		logger.info("{}.", user);
-
 		DetachedCriteria criteria = DetachedCriteria.forClass(User.class);
 		criteria.add(Restrictions.eq("name", user.getName()));
 		criteria.add(Restrictions.eq("password", user.getPassword()));
@@ -61,8 +60,6 @@ public class UserController extends BaseController {
 		if (userList.size() >= 1) {
 			userdb = userList.get(0);
 		}
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:home");
 		if (null != userdb) {
 			System.out.println(userdb.getName());
 			httpSession.setAttribute("user", userdb.getName());
@@ -71,13 +68,13 @@ public class UserController extends BaseController {
 			System.out.println(message);
 			httpSession.setAttribute("message", message);
 		}
-		return mv;
+		return URL_NORMAL_HOME;
 	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession httpSession) {
 		httpSession.removeAttribute("user");
-		return "redirect:home";
+		return URL_NORMAL_HOME;
 	}
 	
 
@@ -92,6 +89,6 @@ public class UserController extends BaseController {
 			userService.save(user);
 			httpSession.setAttribute("user", user.getName());
 		}
-		return "redirect:home";
+		return URL_NORMAL_HOME;
 	}
 }

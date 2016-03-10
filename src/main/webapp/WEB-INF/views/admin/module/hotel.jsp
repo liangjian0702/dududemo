@@ -1,7 +1,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page import="org.apache.commons.lang3.StringUtils"%>
+<%@ page import="org.springframework.util.StringUtils"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -17,39 +17,39 @@
 <div class="row placeholders">
 	<div class="col-xs-6 col-sm-3 placeholder">
 		<img
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+			src="<%=basePath%>static/img/hotel/sinagawahotel.jpg"
 			width="200" height="200" class="img-responsive"
 			alt="Generic placeholder thumbnail">
-		<h4>Label</h4>
-		<span class="text-muted">Something else</span>
+		<h4>品川プリンスホテル</h4>
+		<span class="text-muted">東京都港区高輪4-10-30</span>
 	</div>
 	<div class="col-xs-6 col-sm-3 placeholder">
 		<img
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+			src="<%=basePath%>static/img/hotel/daibahotel.jpg"
 			width="200" height="200" class="img-responsive"
 			alt="Generic placeholder thumbnail">
-		<h4>Label</h4>
-		<span class="text-muted">Something else</span>
+		<h4>ホテル グランパシフィック LE DAIBA</h4>
+		<span class="text-muted">東京都港区台場2-6-1</span>
 	</div>
 	<div class="col-xs-6 col-sm-3 placeholder">
 		<img
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+			src="<%=basePath%>static/img/hotel/teikokuhotel.jpg"
 			width="200" height="200" class="img-responsive"
 			alt="Generic placeholder thumbnail">
-		<h4>Label</h4>
-		<span class="text-muted">Something else</span>
+		<h4>帝国ホテル東京</h4>
+		<span class="text-muted">東京都千代田区内幸町1-1-1</span>
 	</div>
 	<div class="col-xs-6 col-sm-3 placeholder">
 		<img
-			src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+			src="<%=basePath%>static/img/hotel/tokyodomhotel.jpg"
 			width="200" height="200" class="img-responsive"
 			alt="Generic placeholder thumbnail">
-		<h4>Label</h4>
-		<span class="text-muted">Something else</span>
+		<h4>東京ドームホテル</h4>
+		<span class="text-muted">東京都文京区後楽1-3-61</span>
 	</div>
 </div>
 
-<h2 class="sub-header">Section title</h2>
+<h2 class="sub-header">酒店列表</h2>
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>

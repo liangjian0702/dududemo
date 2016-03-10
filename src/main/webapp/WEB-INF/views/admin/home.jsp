@@ -50,7 +50,7 @@
 			<jsp:include page="component/sidebar.jsp" flush="true" />
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<!-- sidebar -->
+				<!-- content -->
 				<jsp:include page="${module}" flush="true" />
 			</div>
 		</div>
